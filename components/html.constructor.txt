@@ -1,0 +1,1 @@
+S::global --> H::header --> header --> H::footer
