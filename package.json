@@ -1,21 +1,32 @@
 {
   "name": "code-splitter",
-  "version": "1.0.6",
-  "description": "",
+  "version": "1.1.3",
+  "description": "Code Splitter is a library for combining html and css modules in your web projects while following a component-based approach.",
   "main": "index.js",
   "bin": {
     "cs-create": "bin/cs.create.js",
-    "cs-server": "bin/cs.server.js"
+    "cs-server": "bin/cs.server.js",
+    "cs-init": "bin/cs.init.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {},
+  "keywords": [
+    "code-splitting",
+    "web-development",
+    "HTML",
+    "CSS",
+    "component-based",
+    "bundler",
+    "module bundler",
+    "html components",
+    "css components",
+    "web builder"
+  ],
+  "author": "afeoktistovvv@gmail.com",
+  "license": "MIT",
   "dependencies": {
     "browser-sync": "2.29.3",
     "chalk": "4.1.2",
+    "enquirer": "^2.4.1",
     "express": "4.18.2"
   }
 }

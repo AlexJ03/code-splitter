@@ -179,6 +179,32 @@ html {
     opacity: 0.9;
 }
 `,
+    prompts: [
+        {
+            initial: "components",
+            type: 'input',
+            name: 'entry',
+            message: 'What is your entry point?'
+        },
+        {
+            initial: "dist",
+            type: 'input',
+            name: 'outputName',
+            message: 'What is your output point?'
+        },
+        {
+            initial: "index",
+            type: 'input',
+            name: 'htmlName',
+            message: 'What is your output HTML?'
+        },
+        {
+            initial: "style",
+            type: 'input',
+            name: 'cssName',
+            message: 'What is your output CSS?'
+        },
+    ]
 };
 
 module.exports = data;

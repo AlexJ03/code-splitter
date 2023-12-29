@@ -1,64 +1,70 @@
-# code-splitter
+<h1 align="center">Code Splitter</h1>
 
-![Version](https://img.shields.io/npm/v/code-splitter.svg)
-![License](https://img.shields.io/npm/l/code-splitter.svg)
+<p align="center">
+  <img src="https://img.shields.io/npm/v/code-splitter.svg" alt="Version">
+  <img src="https://img.shields.io/badge/Node.js-v14.17.4-green.svg" alt="Node.js Version">
+  <img src="https://img.shields.io/npm/l/code-splitter.svg" alt="License">
+</p>
 
-## `code-splitter` is a library for combining html and css modules in your web projects while following a component-based approach.
+<br>
 
-### Installation:
-#### First
-```sh
-$ npm init -y 
+<h4 align="center">Split Code Effortlessly!</h4>
+
+<h3 align="center">Code Splitter is a library for combining html and css modules in your web projects while following a component-based approach.<h1>
+
+## ❯ Getting started
+- [Installation](#installation)
+- [Usage](#usage)
+- [Details of **cs.config.js**](#details-of-csconfigjs)
+- [Details of **CLI Commands**](#details-of-cli-commands)
+- [Details of **Structure**](#details-of-structure)
+- [Details of **Create Components**](#details-of-create-components)
+- [Details of **cs.constructor.txt**](#details-of-csconstructortxt)
+- [License](#license)
+
+## ❯ <a id="installation">Installation</a>
+
+### Initializing package.json:
+
+```shell
+npm init -y 
 ```
 
-#### Second
-```sh
-$ npm i code-splitter
+### Package installation (global installation is required):
+
+```shell
+npm i code-splitter
+npm i -g code-splitter
 ```
 
-#### Third
-**REQUIRED**
-```sh
-$ npm i -g code-splitter
+## ❯ <a id="usage">Usage</a>
+
+### To create a configuration file, use the command and answer the questions:
+
+```shell
+cs-init
 ```
 
-### Usage:
+### List of questions:
 
-#### 1) To get started with code-splitter, you need to create a configuration file `cs.config.js`
-Basic **cs.config.js**:
-```js
-const base = __dirname;
+| Question                                                         | Default                     | Description                                                              |
+|------------------------------------------------------------------|-----------------------------|--------------------------------------------------------------------------|
+| <center>What is your entry point?</center>                       | <center>components</center> | <center>Creates a folder where your components will be located</center>  |
+| <center>What is your output point?</center>                      | <center>dist</center>       | <center>Creates a folder where your final files will be located</center> |
+| <center>What is your output HTML?</center>                       | <center>index</center>      | <center>Sets the name of the .html file, default index.html</center>     |
+| <center>What is your output CSS? ( **Do not change!** )</center> | <center>style</center>      | <center>Sets the name of the .css file, default style.css</center>       |
 
-const config = {
-    base,
-    entry: "components",
-    output: {
-        name: "build",
-        html: {
-            name: "index"
-        },
-        css: {
-            name: "style"
-        },
-    },
-};
-
-module.exports = config;
+### To create a structure, use the `cs-create` command:
+```shell
+cs-create
 ```
 
-#### 2) To create the correct project structure, use the command `cs-create` in the terminal
-```sh
-$ cs-create
+### To start the project, use the `cs-server` command:
+```shell
+cs-server
 ```
 
-
-#### 3) To start the project, use the `cs-server` command
-```sh
-$ cs-server
-```
-
-
-### Details of `cs.config.js`:
+## ❯ <a id="details-of-csconfigjs">Details of *cs.config.js*</a>
 - `base` - specifies the path to the root of the project.
 - `entry` - the name of the working folder.
 - `output` - special parameters for output data.
@@ -68,39 +74,48 @@ $ cs-server
 - -   `css` - special parameters for css output data.
 -  - -   `name` - the name of the output css file.
 
-### Details of `cli commands`:
-- `cs-create` - creates the correct project structure
-- - The `basic configuration file` creates this structure:
-    ├── **components** /
-    │   ├── header/
-    │   │   ├── header.html
-    │   │   └── header.css
-    │   ├── footer/
-    │   │   ├── footer.html
-    │   │   └── footer.css
-    ├──  **build**
-    │   ├──   index.html
-    │   ├──   style.css
-    ├──  **global**
-    │   ├──   footer.html
-    │   ├──   global.css
-    │   ├──   header.html
-    ├──  **cs.constructor.txt**
-- `cs-server` - starts the server
+## ❯ <a id="details-of-cli-commands">Details of *cli commands*</a>
 
+- `cs-init` - initializing the configuration file.
+- `cs-create` - creates a project structure based on the configuration file.
+- `cs-server` - starts the server.
 
-### Details of `create components`:
+## ❯ <a id="details-of-structure">Details of *structure*</a>
+
+### Example structure:
+
+| Directory/File         | Description                            |
+|------------------------|----------------------------------------|
+| **components**/        |                                        |
+| ⚫ header/              | - HTML and CSS for the header component|
+| ⚫ footer/              | - HTML and CSS for the footer component|
+| **dist**/              |                                        |
+| ⚫ index.html           | - Main HTML file for the build         |
+| ⚫ style.css            | - Main CSS file for the build          |
+| **global**/            |                                        |
+| ⚫ footer.html          | - Global footer HTML file               |
+| ⚫ global.css           | - Global CSS file                       |
+| ⚫ header.html          | - Global header HTML file               |
+| **cs.constructor.txt** | - Text file for cs.constructor          |
+
+## ❯ <a id="details-of-create-components">Details of *create components*</a>
+
 -  **You must create a folder inside your entry point (components), for example `components/about`**
 - **Create two files inside it ('nameOfComponent'.css and 'nameOfComponent'.html), for example `components/about/about.html` and `components/about/about.css`**
 - **Add your component to the constructor, for example `S::global --> H::header --> header --> about --> H::footer`**
 
-### Details of `cs.constructor.txt`:
-#### **cs.constructor.txt** - this is a constructor file. It sets the structure of the page, for example:
+## ❯ <a id="details-of-csconstructortxt">Details of *cs.constructor.txt*</a>
+
+### **cs.constructor.txt** - this is a constructor file. It sets the structure of the page, for example:
+
 ```txt
 S::global --> H::header --> header --> H::footer
 ```
-##### **Explanation**:
-###### **Syntax**:
+
+#### **Explanation**
+
+##### **Syntax**:
+
 - `-->` - separator between connected components.
 - `S::global` - connects the *global.css* file from the global storage:
 - - Prefix **S** - means the extension of the plug-in file (in this case, the style file .css).
@@ -119,8 +134,10 @@ S::global --> H::header --> header --> H::footer
 - - **::** - separator.
 - - **footer** - file name (extension is not required).
 
-###### **About the components**:
+##### **About the components**:
+
 Command **S::global** - connects the file *global.css* from the global storage:
+
 ```css
 * {
     margin: 0;
@@ -132,13 +149,15 @@ html {
     font-size: 16px;
 }
 
-.container {
+*****.container {
     max-width: 1200px;
     margin: 0 auto;
     height: 100%;
 }
 ```
+
 Command **H::header** - connects the file *header.html* from the global storage:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -151,7 +170,9 @@ Command **H::header** - connects the file *header.html* from the global storage:
 ```
 
 Command **header** - connects *header.html* and *header.css* files from the components/header folder:
+
 *header.html*:
+
 ```html
 <header class="header">
     <div class="container">
@@ -173,9 +194,10 @@ Command **header** - connects *header.html* and *header.css* files from the comp
     </div>
 </header>
 ```
-*header.css*:
-```css
 
+*header.css*:
+
+```css
 .header {
     height: 100vh;
     max-width: 100%;
@@ -205,16 +227,17 @@ Command **header** - connects *header.html* and *header.css* files from the comp
     letter-spacing: 3px;
     opacity: 0.9;
 }
-    
 ```
 
 Command **H::footer** - connects the file *footer.html* from the global storage:
+
 *header.html*:
+
 ```html
 </body>
 </html>
 ```
 
-# License
+## ❯ <a id="license">License</a>
 
-This package is distributed under the MIT License.
+**This package is distributed under the MIT License.**
