@@ -17,7 +17,7 @@ const config = {
             name: "${htmlName}"
         },
         css: {
-            name: "${cssName}"
+            name: "${'style'}"
         },
     },
 };

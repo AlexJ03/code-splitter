@@ -52,7 +52,6 @@ cs-init
 | <center>What is your entry point?</center>                       | <center>components</center> | <center>Creates a folder where your components will be located</center>  |
 | <center>What is your output point?</center>                      | <center>dist</center>       | <center>Creates a folder where your final files will be located</center> |
 | <center>What is your output HTML?</center>                       | <center>index</center>      | <center>Sets the name of the .html file, default index.html</center>     |
-| <center>What is your output CSS? ( **Do not change!** )</center> | <center>style</center>      | <center>Sets the name of the .css file, default style.css</center>       |
 
 ### To create a structure, use the `cs-create` command:
 ```shell

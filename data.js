@@ -197,13 +197,7 @@ html {
             type: 'input',
             name: 'htmlName',
             message: 'What is your output HTML?'
-        },
-        {
-            initial: "style",
-            type: 'input',
-            name: 'cssName',
-            message: 'What is your output CSS?'
-        },
+        }
     ]
 };
 
