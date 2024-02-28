@@ -149,7 +149,7 @@ html {
     font-size: 16px;
 }
 
-*****.container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
     height: 100%;

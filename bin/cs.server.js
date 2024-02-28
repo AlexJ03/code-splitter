@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(success(`CodeSplitter запущен на порту ${port}...`));
+    console.log(success(`Code-Splitter is running on the port ${port}...`));
 });
 
 browserSync.init({
@@ -32,7 +32,7 @@ browserSync.init({
 });
 
 browserSync.watch([`${path.resolve(config.base, config.entry)}/**/*.html`, `${path.resolve(config.base, config.entry)}/**/*.css`, `${path.resolve(config.base, config.global || "global")}/**/*.css`, `${path.resolve(config.base, config.global || "global")}/**/*.html`, `${config?.main || path.resolve(config.base, "cs.constructor.txt")}`]).on('change', (file) => {
-    console.log(warn(`${file} изменен. Перезагрузка браузера...`));
+    console.log(warn(`${file} changed. Restarting the browser...`));
 
     const data = cs.readConstructor();
     const arrayOfFiles = cs.toArrayConstructorData(data);

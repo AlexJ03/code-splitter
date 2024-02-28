@@ -17,8 +17,8 @@ const warning = chalk.bold.yellow;
 
 if (!fs.existsSync(pathToComponents)) {
     cs.createBaseDir();
-    console.log(success("Сборка Code-Splitter успешно создана!"));
+    console.log(success("The Code-Splitter assembly has been successfully created!"));
 } else {
-    console.log(warning("Сборка Code-Splitter уже существует."));
+    console.log(warning("The Code-Splitter assembly already exists..."));
 }
 
