@@ -8,4 +8,4 @@ const success = chalk.bold.green;
 
 const questions = prompt( prompts )
     .then(response => createConfig(response))
-    .then(() => console.log(success("Сборка Code-Splitter успешно создана!")));
+    .then(() => console.log(success("The Code-Splitter assembly has been successfully created!")));
