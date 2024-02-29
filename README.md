@@ -10,7 +10,7 @@
 
 <h4 align="center">Split Code Effortlessly!</h4>
 
-<h3 align="center">Code Splitter is a library for combining html and css modules in your web projects while following a component-based approach.<h1>
+<h3 align="center">Code Splitter is a simple tool for creating single-page websites using a component-based approach.<h1>
 
 ## ❯ Getting started
 - [Installation](#installation)
@@ -21,6 +21,8 @@
 - [Details of **Create Components**](#details-of-create-components)
 - [Details of **cs.constructor.txt**](#details-of-csconstructortxt)
 - [License](#license)
+
+---
 
 ## ❯ <a id="installation">Installation</a>
 
@@ -37,12 +39,14 @@ npm i code-splitter
 npm i -g code-splitter
 ```
 
+---
+
 ## ❯ <a id="usage">Usage</a>
 
 ### To create a configuration file, use the command and answer the questions:
 
 ```shell
-cs-init
+cs init
 ```
 
 ### List of questions:
@@ -53,15 +57,17 @@ cs-init
 | <center>What is your output point?</center>                      | <center>dist</center>       | <center>Creates a folder where your final files will be located</center> |
 | <center>What is your output HTML?</center>                       | <center>index</center>      | <center>Sets the name of the .html file, default index.html</center>     |
 
-### To create a structure, use the `cs-create` command:
+### To create a structure, use the `cs create` command:
 ```shell
-cs-create
+cs create
 ```
 
-### To start the project, use the `cs-server` command:
+### To start the project, use the `cs server` command:
 ```shell
-cs-server
+cs server
 ```
+
+---
 
 ## ❯ <a id="details-of-csconfigjs">Details of *cs.config.js*</a>
 - `base` - specifies the path to the root of the project.
@@ -73,11 +79,20 @@ cs-server
 - -   `css` - special parameters for css output data.
 -  - -   `name` - the name of the output css file.
 
+---
+
 ## ❯ <a id="details-of-cli-commands">Details of *cli commands*</a>
 
-- `cs-init` - initializing the configuration file.
-- `cs-create` - creates a project structure based on the configuration file.
-- `cs-server` - starts the server.
+> cs (code-splitter) is a global command that you can use
+> when installing a package globally.
+> For this command to work correctly,
+> you need to use the parameters:
+
+- `init` - initializing the configuration file.
+- `create` - creates a project structure based on the configuration file.
+- `server` - starts the server.
+
+---
 
 ## ❯ <a id="details-of-structure">Details of *structure*</a>
 
@@ -97,11 +112,15 @@ cs-server
 | ⚫ header.html          | - Global header HTML file               |
 | **cs.constructor.txt** | - Text file for cs.constructor          |
 
+---
+
 ## ❯ <a id="details-of-create-components">Details of *create components*</a>
 
 -  **You must create a folder inside your entry point (components), for example `components/about`**
 - **Create two files inside it ('nameOfComponent'.css and 'nameOfComponent'.html), for example `components/about/about.html` and `components/about/about.css`**
 - **Add your component to the constructor, for example `S::global --> H::header --> header --> about --> H::footer`**
+
+---
 
 ## ❯ <a id="details-of-csconstructortxt">Details of *cs.constructor.txt*</a>
 
@@ -236,6 +255,8 @@ Command **H::footer** - connects the file *footer.html* from the global storage:
 </body>
 </html>
 ```
+
+---
 
 ## ❯ <a id="license">License</a>
 

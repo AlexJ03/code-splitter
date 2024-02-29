@@ -45,7 +45,6 @@ browserSync.watch([`${path.resolve(config.base, config.entry)}/**/*.html`, `${pa
     const cssData = cs.readCSS(arrayOfFiles);
     const css = cs.formatCss(cssData);
 
-
     // Build
     cs.buildHtml(html);
     cs.buildCss(css);
